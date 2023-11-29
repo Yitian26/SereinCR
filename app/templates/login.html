@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>SereinCR</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style1.css')}}"/>
+	<script src="{{ url_for('static',filename='jquery.js')}}"></script>
+	<script src="{{ url_for('static',filename='verificationNumbers.js')}}"></script>
+	<script src="{{ url_for('static',filename='Particleground.js')}}"></script>
+	<script>
+	$(document).ready(function() {
+	  $('body').particleground({
+		dotColor: '#5cbdaa',
+		lineColor: '#5cbdaa'
+	  });
+	});
+	</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<div class="container">
+		<h1>Welcome</h1>
+    	{%if info%}{{info}}{% else %}请登录后使用{%endif%}
+		<form class="form" action="/login" method="post">
+			<input name="id" type="text" placeholder="用户名">
+			<input name="password" type="password" placeholder="密码">
+			<button type="submit" name="login-button" value="login">登录</button>
+      		<button type="submit" name="signup-button" value="signup">注册</button>
+		</form>
+
+	</div>
+	
+</div>
+
+</body>
+</html>

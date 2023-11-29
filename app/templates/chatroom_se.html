@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>SereinCR</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style2.css')}}"/>
+</head>
+<body>
+<div class="header">
+  <br><br><br>
+  <h1>Serein's Chatroom</h1>
+</div>
+
+<div class="topnav">
+  <form method="post">
+	<button type="submit" name="home" value="home">主页</button>
+    <button type="submit" name="search" value="search">搜索</button>
+    <button type="submit" name="account" value="account">账户</button>
+    <button type="submit" name="info" value="info">关于</button>
+	<button type="submit" name="logout" value="logout">登出</button>
+  </form>
+  <p>欢迎回来，{{name}}</p>
+</div>
+
+<div class="wrapper">
+
+	<div class="container">
+    {%if msgs%}
+		<table>
+			{%for msg in msgs%}
+			<tr>
+				<td class="lm">{{msg[1]}}</td>
+				<td class="lm">{{msg[2]}}</td>
+				<td class="r">{{msg[3]}}</td>
+			</tr>
+			{%endfor%}
+		</table>
+		{%endif%}
+		<form class="form2" method="post">
+			<input name="text" type="text" placeholder="输入呢称">
+			<button type="submit" name="searchmsg" value="searchmsg">搜索</button>
+		</form>
+	</div>
+
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</div>
+
+
+<div class="footer">
+  <ul>
+	  <li>friend links</li>
+	  <li><a href="http://115.236.49.52:8000" target="_blank">xjcs</a></li>
+  </ul>
+  <p>服务器时间:{{servertime}}</p>
+  <p>© 2022 徐易天.</p>
+</div>
+
+</body>
+</html>

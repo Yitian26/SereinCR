@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>SereinCR</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style2.css')}}"/>
+</head>
+<body>
+<div class="header">
+  <br><br><br>
+  <h1>Serein's Chatroom</h1>
+</div>
+
+<div class="topnav">
+  <form method="post">
+	<button type="submit" name="home" value="home">主页</button>
+    <button type="submit" name="search" value="search">搜索</button>
+    <button type="submit" name="account" value="account">账户</button>
+    <button type="submit" name="info" value="info">关于</button>
+	<button type="submit" name="logout" value="logout">登出</button>
+  </form>
+  <p>欢迎回来，{{name}}</p>
+</div>
+
+<div class="wrapper">
+
+	<div class="container">
+    <h1>账户管理</h1>
+    {%if info%}{{info}}{% else %}{%endif%}
+	<form id='form1' method="post">
+		<p>原用户名{{id}}</p>
+		<p>原密码{{password}}</p>
+		<input id='input1' name="password" type="password" placeholder="新密码*不更改为空">
+      	<p>原昵称{{name}}</p>
+		<input id='input2' name="name" placeholder="新昵称*不更改为空" type="text">
+      	<button type="submit" name="checkbutton" value="check">修改</button>
+	</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</div>
+
+
+<div class="footer">
+  <ul>
+	  <li>friend links</li>
+	  <li><a href="http://115.236.49.52:8000" target="_blank">xjcs</a></li>
+  </ul>
+  <p>服务器时间:{{servertime}}</p>
+  <p>© 2022 徐易天.</p>
+</div>
+
+</body>
+</html>

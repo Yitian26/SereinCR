@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>SereinCR</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style1.css')}}"/>
+	<script src="{{ url_for('static',filename='jquery.js')}}"></script>
+	<script src="{{ url_for('static',filename='verificationNumbers.js')}}"></script>
+	<script src="{{ url_for('static',filename='Particleground.js')}}"></script>
+	<script>
+	$(document).ready(function() {
+	  $('body').particleground({
+		dotColor: '#5cbdaa',
+		lineColor: '#5cbdaa'
+	  });
+	});
+	</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<div class="container">
+		<h1>注册</h1>
+    	{%if info%}{{info}}{% else %}{%endif%}
+		<form class="form" action="/signup" method="post">
+			<input name="id" type="text" placeholder="用户名*长度不大于20">
+			<input name="password" type="password" placeholder="密码*至少8位">
+      <input name="name" type="text" placeholder="昵称*长度不大于10">
+      <button type="submit" name="signup-button1" value="signup">注册</button>
+		</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	
+</div>
+
+</body>
+</html>

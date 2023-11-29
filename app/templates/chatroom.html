@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>SereinCR</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style2.css')}}"/>
+</head>
+<body>
+<div class="header">
+  <br><br><br>
+  <h1>Serein's Chatroom</h1>
+  <p>输入以bot/开头可以和bot对话</p>
+</div>
+
+<div class="topnav">
+  <form action="/chatroom" method="post">
+    <button type="submit" name="search" value="search">搜索</button>
+    <button type="submit" name="account" value="account">账户</button>
+    <button type="submit" name="info" value="info">关于</button>
+	{%if admin%}<button type="submit" name="admin" value="admin">管理</button>{%endif%}
+	<button type="submit" name="logout" value="logout">登出</button>
+  </form>
+  <p>欢迎回来，{{name}}</p>
+</div>
+
+<div class="wrapper">
+
+	<div class="container">
+    	{%if msgs%}
+		<table>
+			{%for msg in msgs%}
+			<tr>
+				<td class="lm">{{msg[1]}}</td>
+				<td class="lm">{{msg[2]}}</td>
+				<td class="r">{{msg[3]}}</td>
+			</tr>
+			{%endfor%}
+		</table>
+		{%endif%}
+		<form class="form2" method="post">
+			<input name="text" type="text" placeholder="输入40字以内">
+			<button type="submit" name="sendcheck" value="sendcheck">发送</button>
+		</form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</div>
+
+
+<div class="footer">
+  <p>friend links</p>
+  <p><a href="http://115.236.49.52:8000" target="_blank">xjcs</a></p>
+  <p>服务器时间:{{servertime}}</p>
+  <p>© 2022 徐易天.</p>
+</div>
+
+</body>
+</html>

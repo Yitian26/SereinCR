@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>SereinCR</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style2.css')}}"/>
+<link rel="stylesheet" href="{{ url_for('static',filename='2048.css')}}"/>
+<script src="{{ url_for('static',filename='2048.js')}}"></script>
+</head>
+<body>
+<div class="header">
+  <br><br><br>
+  <h1>Serein's Chatroom</h1>
+</div>
+
+<div class="topnav">
+  <form method="post">
+	<button type="submit" name="home" value="home">主页</button>
+    <button type="submit" name="search" value="search">搜索</button>
+    <button type="submit" name="account" value="account">账户</button>
+    <button type="submit" name="info" value="info">关于</button>
+	<button type="submit" name="logout" value="logout">登出</button>
+  </form>
+  <p>欢迎回来，{{name}}</p>
+</div>
+
+<div class="wrapper">
+
+	<div class="container">
+    <h1>这似乎是寒假作业？</h1>
+    <p>以及一个打发时间的小游戏<br>用WASD操作</p>
+    <p>Score:<span id="score"></span></p>
+    <div id="gridPanel">
+    <div id="g00" class="grid"></div>
+    <div id="g01" class="grid"></div>
+    <div id="g02" class="grid"></div>
+    <div id="g03" class="grid"></div>
+
+    <div id="g10" class="grid"></div>
+    <div id="g11" class="grid"></div>
+    <div id="g12" class="grid"></div>
+    <div id="g13" class="grid"></div>
+
+    <div id="g20" class="grid"></div>
+    <div id="g21" class="grid"></div>
+    <div id="g22" class="grid"></div>
+    <div id="g23" class="grid"></div>
+
+    <div id="g30" class="grid"></div>
+    <div id="g31" class="grid"></div>
+    <div id="g32" class="grid"></div>
+    <div id="g33" class="grid"></div>
+
+    <div id="c00" class="cell"></div>
+    <div id="c01" class="cell"></div>
+    <div id="c02" class="cell"></div>
+    <div id="c03" class="cell"></div>
+
+    <div id="c10" class="cell"></div>
+    <div id="c11" class="cell"></div>
+    <div id="c12" class="cell"></div>
+    <div id="c13" class="cell"></div>
+
+    <div id="c20" class="cell"></div>
+    <div id="c21" class="cell"></div>
+    <div id="c22" class="cell"></div>
+    <div id="c23" class="cell"></div>
+
+    <div id="c30" class="cell"></div>
+    <div id="c31" class="cell"></div>
+    <div id="c32" class="cell"></div>
+    <div id="c33" class="cell"></div>
+    </div>
+    <div id="gameOver"><!--同时包含前景和背景的容器-->
+    <div></div>
+    <p>
+    Game Over!<br>
+    Score:<span id="finalScore"></span><br>
+    <a class="button" onclick="game.start()">Try again!</a>
+    </p>
+ </div>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</div>
+
+
+<div class="footer">
+  <ul>
+	  <li>friend links</li>
+	  <li><a href="http://115.236.49.52:8000" target="_blank">xjcs</a></li>
+  </ul>
+  <p>服务器时间:{{servertime}}</p>
+  <p>© 2022 徐易天.</p>
+</div>
+
+</body>
+</html>
